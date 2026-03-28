@@ -8,6 +8,7 @@
     "profiles": {
       "openclaw": {
         "driver": "openclaw",
+        "cdpPort": 18800,
         "color": "#FF4500"
       }
     }
