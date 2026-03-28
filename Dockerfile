@@ -9,16 +9,15 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       chromium \
-      ca-certificates \
-      curl \
       tini \
       fonts-liberation \
  && rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g openclaw@2026.3.24
+RUN npm install -g openclaw@2026.3.24 --no-audit --no-fund \
+ && npm cache clean --force \
+ && rm -rf /root/.npm /tmp/*
 
-RUN mkdir -p /home/node/.openclaw /workspace \
- && chown -R node:node /home/node /workspace
+RUN install -d -o node -g node /home/node/.openclaw /workspace
 
 WORKDIR /workspace
 
