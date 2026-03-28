@@ -3,6 +3,7 @@ FROM node:24-bookworm-slim
 ENV DEBIAN_FRONTEND=noninteractive \
     HOME=/home/node \
     OPENCLAW_HOME=/home/node/.openclaw \
+    OPENCLAW_STATE_DIR=/home/node/.openclaw \
     PUPPETEER_SKIP_DOWNLOAD=1
 
 RUN apt-get update \

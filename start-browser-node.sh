@@ -19,8 +19,9 @@ echo "[browser-node] chromium: $(chromium --version 2>/dev/null || echo missing)
 echo "[browser-node] gateway: ${GATEWAY_HOST}:${GATEWAY_PORT}"
 echo "[browser-node] node display name: ${NODE_DISPLAY_NAME}"
 echo "[browser-node] openclaw dir: /home/node/.openclaw"
+echo "[browser-node] state dir: ${OPENCLAW_STATE_DIR:-/home/node/.openclaw}"
 echo "[browser-node] existing files:" && ls -la /home/node/.openclaw || true
-if [[ -f /home/node/.openclaw/node.json ]]; then
+if [[ -f "${OPENCLAW_STATE_DIR:-/home/node/.openclaw}/node.json" ]]; then
   echo "[browser-node] node.json present"
 else
   echo "[browser-node] node.json missing"
@@ -44,7 +45,7 @@ while true; do
 
   code=$?
   echo "[browser-node] node host exited with code ${code}; retrying in ${NODE_RETRY_SECONDS}s"
-  if [[ -f /home/node/.openclaw/node.json ]]; then
+  if [[ -f "${OPENCLAW_STATE_DIR:-/home/node/.openclaw}/node.json" ]]; then
     echo "[browser-node] node.json now present"
   else
     echo "[browser-node] node.json still missing"
