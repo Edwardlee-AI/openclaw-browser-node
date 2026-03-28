@@ -8,8 +8,6 @@
     "profiles": {
       "openclaw": {
         "driver": "openclaw",
-        "userDataDir": "/home/node/.openclaw/browser/openclaw",
-        "cdpPort": 18800,
         "color": "#FF4500"
       }
     }
