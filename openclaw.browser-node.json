@@ -1,0 +1,25 @@
+{
+  "browser": {
+    "enabled": true,
+    "executablePath": "/usr/bin/chromium",
+    "defaultProfile": "openclaw",
+    "headless": true,
+    "noSandbox": true,
+    "profiles": {
+      "openclaw": {
+        "driver": "openclaw",
+        "userDataDir": "/home/node/.openclaw/browser/openclaw",
+        "cdpPort": 18800,
+        "color": "#FF4500"
+      }
+    }
+  },
+  "nodeHost": {
+    "browserProxy": {
+      "enabled": true,
+      "allowProfiles": [
+        "openclaw"
+      ]
+    }
+  }
+}

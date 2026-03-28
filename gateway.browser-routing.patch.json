@@ -1,0 +1,10 @@
+{
+  "gateway": {
+    "nodes": {
+      "browser": {
+        "mode": "auto",
+        "node": "browser-node"
+      }
+    }
+  }
+}
